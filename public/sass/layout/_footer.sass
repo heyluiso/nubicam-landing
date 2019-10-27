@@ -1,0 +1,40 @@
+.footer
+    width: 100%
+    background-color: white
+    padding: 5rem 4rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    
+    &__text 
+        font-size: 1.3rem
+        text-align: center
+
+    &__social
+        &--link
+            text-decoration: none
+
+            &:not(:last-child)
+                margin-right: 3rem
+
+// Responsive
+@include respond(tab-land)
+    .footer
+        flex-direction: column
+
+        &__logo
+            margin-bottom: 2rem
+
+        &__social
+            order: 1
+            margin-bottom: 2rem
+
+        &__text
+            order: 2
+
+@include respond(phone)
+    .footer
+        padding: 5rem 2rem
+        
+        &__text
+            font-size: 1.2rem

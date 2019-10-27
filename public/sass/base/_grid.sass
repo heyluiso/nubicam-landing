@@ -1,0 +1,28 @@
+.container
+  width: calc(100% - 10em)
+  max-width: 122.8rem
+  margin: 0 auto
+  background: white
+  
+// Debug
+// div[class^="col-"]
+//   background: pink
+//   border: 1px solid red
+//   padding: 1rem 0
+//   text-align: center
+
+.row
+  display: flex
+  flex-wrap: wrap
+
+$columns: 12
+
+@for $i from 1 through $columns
+  .col-#{$i}
+    flex: 0 0 100% / $columns * $i
+
+
+// Responsive Grid
+@include respond(tab-port)
+  div[class^="col-"]
+    flex: 0 0 100%

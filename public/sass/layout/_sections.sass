@@ -1,0 +1,121 @@
+.family
+    width: 100%
+    background-color: white
+
+    &__header
+        height: 25rem
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+        padding: 2rem
+
+        &--title
+            margin-bottom: 2rem
+
+        &--text
+            max-width: 42.1rem
+
+.home
+    width: 100%
+    background-color: white
+    padding: 5rem 4rem
+
+    &__image
+        border-radius: 2px
+
+    &__content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        text-align: left
+
+        &--title 
+            margin-bottom: 2rem
+            max-width: 50.7rem
+
+        &--text 
+            margin-bottom: 2rem
+            max-width: 46rem
+
+.dog // Center the dog image on sections pets
+    display: block
+    text-align: right
+
+.banner
+    width: 100%
+    background-color: $primary-color
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 6rem 10rem
+
+    &__title 
+        max-width: 61.4rem
+        color: white
+        font-size: 3.2rem
+        line-height: 4.2rem
+
+// Responsive
+@include respond(tab-land)
+    .home
+        &__image
+            width: 100%
+            height: auto
+            margin-bottom: 2rem
+        
+        &__content
+            padding: 2rem
+
+    .banner
+        flex-direction: column
+
+        &__title
+            text-align: center
+            margin-bottom: 3rem
+
+@include respond(tab-port)
+    .home
+        &__content
+            align-items: center
+            padding: 0
+
+            &--title
+                text-align: center
+
+            &--text 
+                text-align: center
+
+@include respond(phone)
+    .family
+        &__header
+            &--title
+                max-width: 30rem
+                font-size: 2.2rem
+                line-height: 3.2rem
+    .home
+        &__imgbox
+            order: 2
+
+        &__txtbox
+            order: 1
+            
+            &--button
+                margin-bottom: 5rem
+
+        &__content
+            &--title
+                font-size: 2.2rem
+                line-height: 3.2rem
+
+        
+    .banner
+        &.container
+            padding: 5rem 2rem
+
+        &__title
+            font-size: 2.8rem
+            line-height: 3.8rem
+    
